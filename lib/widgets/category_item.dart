@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/category_trips_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String title;
@@ -6,35 +7,51 @@ class CategoryItem extends StatelessWidget {
 
   CategoryItem(this.title, this.imageUrl);
 
+  void selectCategory(BuildContext ctx) {
+    Navigator.of(ctx).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return CategoryTripsScreen();
+        },
+      ),
+    );
+    
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(15),
-          child: Image.network(
-            imageUrl,
-            height: 250,
-            fit: BoxFit.cover,
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.all(10),
-          alignment: Alignment.center,
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 30,
-              color: Colors.white,
+    return InkWell(
+      onTap: ()=> selectCategory(context),
+      splashColor: Theme.of(context).primaryColor,
+      borderRadius: BorderRadius.circular(15),
+      child: Stack(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Image.network(
+              imageUrl,
+              height: 250,
+              fit: BoxFit.cover,
             ),
           ),
-          
-          decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.4),
-            borderRadius: BorderRadius.circular(15),
+          Container(
+            padding: EdgeInsets.all(10),
+            alignment: Alignment.center,
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.white,
+              ),
+            ),
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.4),
+              borderRadius: BorderRadius.circular(15),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
+
