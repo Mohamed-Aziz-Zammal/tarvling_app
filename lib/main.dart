@@ -14,9 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Travel App',
       theme: ThemeData(
+        primarySwatch: Colors.blue,
+        fontFamily: 'Amiri'
         
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        
+        
       ),
       home: CategoriesScreen(),
     );
