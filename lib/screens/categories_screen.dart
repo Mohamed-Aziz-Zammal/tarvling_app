@@ -23,7 +23,10 @@ class CategoriesScreen extends StatelessWidget {
           mainAxisSpacing: 10,
         ),
         children: Categories_data.map( (categoryDate)=> 
-        CategoryItem(categoryDate.title, categoryDate.imageUrl)).toList(),
+        CategoryItem(
+            categoryDate.id,
+            categoryDate.title,
+            categoryDate.imageUrl)).toList(),
       ),
     );
   }
