@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tarvling_app/screens/categories_screen.dart';
 
+import '../screens/category_trips_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -21,6 +23,9 @@ class MyApp extends StatelessWidget {
         
       ),
       home: CategoriesScreen(),
+      routes: {
+        '/category-trips': (ctx) => CategoryTripsScreen(),
+      },
     );
   }
 }
