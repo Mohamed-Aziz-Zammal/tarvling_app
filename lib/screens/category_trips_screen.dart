@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CategoryTripsScreen extends StatelessWidget {
+  static const scrennRoute = '/category-trips';
   //const CategoryTripsScreen({super.key});
   //final String categoryId;
   //final String categoryTitle;

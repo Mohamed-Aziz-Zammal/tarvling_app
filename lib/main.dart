@@ -22,9 +22,10 @@ class MyApp extends StatelessWidget {
         
         
       ),
-      home: CategoriesScreen(),
+      //home: CategoriesScreen(),
       routes: {
-        '/category-trips': (ctx) => CategoryTripsScreen(),
+        '/': (ctx) => CategoriesScreen(),
+        CategoryTripsScreen.scrennRoute: (ctx) => CategoryTripsScreen(),
       },
     );
   }

@@ -10,7 +10,7 @@ class CategoryItem extends StatelessWidget {
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
-      '/category-trips',
+      CategoryTripsScreen.scrennRoute,
       arguments: {
         'id': id,
         'title': title,
